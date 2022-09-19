@@ -117,7 +117,7 @@ html {
     margin-bottom: 1.7rem;
   }
   .banner-mobil img {
-    padding-left: 1rem;
+    padding-left: 2rem;
   }
   #service-section img {
     width: 75%;
@@ -203,6 +203,30 @@ html {
   border: 1px solid transparent;
   border-radius: 0.25rem;
   margin-left: auto;
+}
+
+.filterForm {
+  top: 62%;
+}
+
+.filterForm .card {
+  z-index: 1072;
+}
+
+span {
+  position: absolute;
+  margin-left: 5px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  padding-left: 25px;
+}
+
+.ui-timepicker-standard {
+  z-index: 1080 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

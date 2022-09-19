@@ -1,6 +1,8 @@
 const HTTP = require('http');
 const FS = require('fs');
 const PATH = require('path');
+const URL = require('url');
+const { url } = require('inspector');
 const directoryName = './public';
 const port = 3000;
 
@@ -22,7 +24,7 @@ const types = {
   const root = PATH.normalize(PATH.resolve(directoryName));
 
   const server = HTTP.createServer((req, res) => {
-    //console.log(`${req.method} ${req.url}`);
+    console.log(`${req.method} ${req.url}`);
   
     const extension = PATH.extname(req.url).slice(1);
     const type = extension ? types[extension] : types.html;
@@ -44,6 +46,15 @@ const types = {
         fileName = PATH.join(req.url, 'index.html');
       }
     }
+
+    // if(req.url){
+    //   console.log(req.data)
+    //   res.writeHead(200);
+    //   res.end(req.data);
+    // }
+
+    const queryObject = URL.parse(req.url, true).query;
+    console.log(queryObject);
   
     const filePath = PATH.join(root, fileName);
     const isPathUnderRoot = PATH.normalize(PATH.resolve(filePath)).startsWith(root);
