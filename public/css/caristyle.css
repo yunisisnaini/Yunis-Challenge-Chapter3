@@ -126,6 +126,10 @@ a:hover{
   justify-content: content-end;
 }
 
+.navbar-nav li a {
+  color: white !important;
+}
+
 .heroSection {
    padding-left: 9.44vw;
 }
@@ -133,87 +137,175 @@ a:hover{
 .heroSection h1{
     text-align: left;
 }
-
-.carousel-item .row .col-lg-10 .d-flex{
-        position: relative;
+.form-container {
+  bottom: 50px;
+  z-index: 999;
 }
-
-
-.carousel-control {
-    background-color: var(--lime-green400);
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    padding: .3em;
-    position: static;
-    opacity: 1;
-}
-
-
-.carousel-item .bg-testi{
-    background-color: #F1F3FF;
-    border-radius: 8px;
-}
-
-
-.banner{
-	background-color: #0D28A6;
-	height: 326px;
-    width: 100%;
-    left: 136px;
-    top: 2078px;
-    border-radius: 13px;
-}
-
-.banner h1{
-	font-size: 36px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 54px;
-	letter-spacing: 0em;
-	text-align: center;
-	padding: 30px;
-	color: #FFFFFF !important;
-
-}
-
-.banner p{
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 300;
-	line-height: 20px;
-	letter-spacing: 0em;
-	text-align: center;
-	color: #FFFFFF !important;
-
-}
-
-.accordion {
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
+.form-container .card {
+  padding: 20px;
+  background: #fff;
   width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
+  height: 100%;
+  box-shadow: 0px 0px 10px 0px #00000026;
+}
+.form-label {
+  font-size: 14px;
+}
+.form-item {
+  width: 100%;
   font-size: 15px;
-  transition: 0.4s;
 }
-.accordion:after {
-  content: '\002B';
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
+input[type="date"]::before {
+  color: #999999;
+  content: attr(placeholder);
+}
+input[type="date"] {
+  color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+  color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+  content: "" !important;
+}
+input[type="time"]::before {
+  color: #999999;
+  content: attr(placeholder);
+}
+input[type="time"] {
+  color: #ffffff;
+}
+input[type="time"]:focus,
+input[type="time"]:valid {
+  color: #666666;
+}
+input[type="time"]:focus::before,
+input[type="time"]:valid::before {
+  content: "" !important;
+}
+
+.driver{
+    margin-right:2% ;
+}
+.date{
+    margin-right:2% ;
+}
+.time{
+    margin-right:2% ;
+}
+.penumpang{
+    margin-right:2% ;
+}
+
+.btn-cari {
+  color: white !important;
+  background-color: #5CB85F;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 30px;
+}
+
+.description-text {
+    width: 468px;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 0;
+}
+
+.hasil-pencarian {
+    margin-top: 40px;
+}
+
+.card-pencarian {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-pencarian-body .car-thumbnail {
+    height: 400px;
+    object-fit: cover;
+}
+
+.card-pencarian img {
+    width: 100%;
+}
+
+.deskripsi-text .marklist {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin: 16px 0px 16px 0;
+}
+
+.deskripsi-text .marklist img {
+    width: 24px;
+    margin-right: 9px;
 }
 
 
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+.mobil-pencarian {
+    width: 345px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 20px;
 }
+
+.pencarian-body-text {
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.pencarian-body-text .harga-mobil {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+#cars-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 1.5em;
+}
+.card-item {
+  background: #fff;
+  width: 333px;
+  height: 586px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 24px;
+}
+.image-car {
+  width: 100%;
+  height: 40%;
+}
+.text-description {
+  margin-top: 20px !important;
+}
+.text-description p {
+  font-size: 14px;
+}
+.text-description .price {
+  font-size: 16px;
+  font-weight: 700;
+}
+.capacity-item {
+  display: flex;
+  column-gap: 20px;
+}
+.capacity-item i {
+  font-size: 20px;
+}
+.btn-pilih {
+  color: white !important;
+  background-color: #5CB85F;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+
 
 @media (max-width:992px) {
 
@@ -232,9 +324,6 @@ a:hover{
     .w-lg-full {
         width: auto;
     }
-
-
-}
 
 @media (max-width:425px) {
     #car-container {
@@ -263,6 +352,5 @@ a:hover{
     transform    : translateX(-100%);
   }
 }
-.navbar-nav li a {
-  color: white !important;
-}
+
+

@@ -3,28 +3,41 @@ class App {
     this.clearButton = document.getElementById("clear-btn");
     this.loadButton = document.getElementById("load-btn");
     this.carContainerElement = document.getElementById("cars-container");
+    this.tipeDriver = document.getElementById("tipe-driver");
+    this.tanggal = document.getElementById("tanggal");
+    this.waktuJemput = document.getElementById("waktu-jemput");
+    this.jumlahPenumpang = document.getElementById("jumlah-penumpang");
   }
 
-  async init() {
-    await this.load();
+  async load(penumpang) {
+    const tanggal = app.tanggal.value;
+    const waktuJemput = app.waktuJemput.value;
 
-    // Register click listener
-    this.clearButton.onclick = this.clear;
-    this.loadButton.onclick = this.run;
+   
+    const inputTime = new Date(`${tanggal} ${waktuJemput}`); 
+    const miliTimeInput = inputTime.getTime();
+
+    const cars = await Binar.listCars((item) => {
+      const dataTime = new Date(item.availableAt); 
+      const miliDataTime = Number(dataTime.getTime()); 
+      const dateFilter = miliDataTime < miliTimeInput;
+      const capacityFilter = item.capacity >= penumpang;
+
+      return capacityFilter && dateFilter;
+    });
+
+    Car.init(cars);
   }
 
   run = () => {
     Car.list.forEach((car) => {
       const node = document.createElement("div");
+      node.classList.add('mobil-pencarian', 'col-lg-4', 'col-sm-12')
       node.innerHTML = car.render();
+
       this.carContainerElement.appendChild(node);
     });
   };
-
-  async load() {
-    const cars = await Binar.listCars();
-    Car.init(cars);
-  }
 
   clear = () => {
     let child = this.carContainerElement.firstElementChild;

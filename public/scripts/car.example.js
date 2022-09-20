@@ -41,12 +41,34 @@ class Car {
 
   render() {
     return `
-      <p>id: <b>${this.id}</b></p>
-      <p>plate: <b>${this.plate}</b></p>
-      <p>manufacture: <b>${this.manufacture}</b></p>
-      <p>model: <b>${this.model}</b></p>
-      <p>available at: <b>${this.availableAt}</b></p>
-      <img src="${this.image}" alt="${this.manufacture}" width="64px">
-    `;
+        <div class="card-pencarian-body">
+          <div class="pencarian-body-image">
+            <img src="${this.image}" alt="${this.manufacture}" class="car-thumbnail">
+          </div>
+          <div class="pencarian-body-text">
+            <p class="tipe-mobil">${this.manufacture} ${this.model} / ${this.type}</p>
+            <p class="harga-mobil">Rp ${this.rentPerDay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} / hari</p>
+            <p class="deskripsi-mobil">${this.description}</p>
+            <div class="col-lg-6 col-sm-12 deskripsi-text">
+              <div class="marklist-container col-sm-12">
+                <div class="marklist">
+                  <img src="images/fi_users.png" style="width: 20px;" alt="">
+                  <p class="description-text jumlah-kursi">${this.capacity} orang</p>
+                </div>
+                <div class="marklist">
+                  <img src="images/fi_settings.png" style="width: 20px;" alt="">
+                  <p class="description-text tipe-driver">${this.transmission}</p>          
+                </div> 
+                <div class="marklist">
+                  <img src="images/fi_calender.png" style="width: 20px;" alt="">
+                  <p class="description-text tahun">Tahun ${this.year}</p>
+                </div> 
+              </div>
+            </div>
+            <a class="nav-link btn btn-color-theme pl-3 pr-3" href="#" style="color: #FFFFFF !important; margin-top: 24px; width: 100%;">Pilih Mobil</a>
+          </div>
+        </div>
+      </div>
+      `;
+    }
   }
-}
