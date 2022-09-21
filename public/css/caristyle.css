@@ -139,7 +139,7 @@ a:hover{
 }
 .form-container {
   bottom: 50px;
-  z-index: 999;
+  z-index: 1080;
 }
 .form-container .card {
   padding: 20px;

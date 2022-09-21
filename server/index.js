@@ -23,7 +23,7 @@ http
             case "/" || "":
                 reqUrl = "/index.html";
                 break;
-            case "/sewa":
+            case "/cars":
                 reqUrl = "/sewaMobil.html";
                 break;
             default:
