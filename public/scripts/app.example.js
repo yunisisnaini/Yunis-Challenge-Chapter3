@@ -13,7 +13,8 @@ class App {
     const tanggal = app.tanggal.value;
     const waktuJemput = app.waktuJemput.value;
 
-   
+    console.log('testteree')
+
     const inputTime = new Date(`${tanggal} ${waktuJemput}`); 
     const miliTimeInput = inputTime.getTime();
 
@@ -26,7 +27,12 @@ class App {
       return capacityFilter && dateFilter;
     });
 
+    console.log(Car.id)
+
     Car.init(cars);
+
+    console.log(Car.id)
+
   }
 
   run = () => {

@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const url = require("url");
 const PUBLIC_DIRECTORY = path.join(__dirname, "../public");
+const PORT = 8000;
 
 const renderHTML = (path, res) => {
     fs.readFile(path, (err, data) => {
@@ -61,5 +62,5 @@ http
             }
         });
     })
-    .listen(8000);
-console.log("Server is running ...");
+    .listen(PORT);
+console.log(`Server is running ... PORT : ${PORT}`);

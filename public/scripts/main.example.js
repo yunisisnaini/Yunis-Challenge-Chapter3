@@ -23,6 +23,7 @@ app.loadButton.addEventListener('click', function() {
         app.load(jumlahPenumpang).then(app.run);
     }
 
+    console.log('haiiii trigger gk')
     // let backdrop = document.getElementById('bg-backdrop')
     // console.log(backdrop)
     // backdrop.remove()

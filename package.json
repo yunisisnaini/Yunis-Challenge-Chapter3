@@ -7,6 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "ferdy": "node ferdy.js"
   }
 }
